@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { FaUserCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
+import img from '../../assets/logo.png'
 
 const Header = () => {
     const {user, logOut} = useContext(AuthContext)
@@ -34,15 +35,15 @@ const Header = () => {
 
     return (
         <div>
-             <div className='mt-0 shadow-xl z-10 sticky bg-opacity-80 bg-blue-50 bg-clip-padding  top-0 w-full blur-filter'>
+             <div className='mt-0  w-full'>
            <div className="navbar bg-base-500 ">
             
                 <div className=" navbar">
 
                 <Link to='/' className="btn btn-ghost normal-case text-5xl font-bold">
-                    <img className='h-16 mr-2 rounded-full pb-1'  alt="" /></Link>
+                    <img className='h-16 mr-2 rounded-full pb-1' src={img}  alt="" /></Link>
                 <Link to='/'><p className="btn btn-ghost normal-case md:text-5xl text-3xl lg:text-5xl font-bold">
-                    E-Learn</p></Link>
+                    Meet Your Trainer</p></Link>
 
                     <div className="dropdown dropdown-end sm:ml-34">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
