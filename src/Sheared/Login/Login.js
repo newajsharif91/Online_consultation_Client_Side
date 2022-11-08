@@ -57,7 +57,7 @@ const Login = () => {
 
   return (
     <div>
-      <Form onSubmit={handleSignIn} className="mt-20 lg:w-7/12 md:w-7/12 w-11/12 mx-auto form-bg rounded-lg">
+      <Form onSubmit={handleSignIn} className="my-20 lg:w-7/12 md:w-7/12 w-11/12 mx-auto form-bg rounded-lg">
         <div className="">
           <div className="text-center">
             <h1 className="text-5xl font-bold pt-8 text-blue-600">Login now!</h1>
