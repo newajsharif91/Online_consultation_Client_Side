@@ -3,6 +3,7 @@ import React from 'react';
 const CourseCard = ({course}) => {
 
     const {name, _id, description, price, img } = course
+    
 
     return (
         <div className=''>

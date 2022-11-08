@@ -3,7 +3,7 @@ import CourseCard from './CourseCard';
 
 const Courses = () => {
     const [courses, setCourses] = useState([])
-    console.log(courses)
+    // console.log(courses)
 
     useEffect(()=>{
         fetch('https://meet-your-trainer-server-atik2788.vercel.app/services')

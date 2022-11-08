@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import About from '../../Pages/About/About';
-import Courses from '../../Pages/Courses/Courses';
+import CourseCardLimite from '../../Pages/Courses/CourseCardLimite';
 
 const Home = () => {
     return (
@@ -22,7 +22,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <Courses></Courses>
+            <CourseCardLimite></CourseCardLimite>
 
             <About></About>
 

@@ -54,7 +54,7 @@ const AddService = () => {
           <input
             name="price"
             type="text"
-            placeholder="Price"
+            placeholder="Price /week"
             className="input input-bordered w-full"
             required
           />
