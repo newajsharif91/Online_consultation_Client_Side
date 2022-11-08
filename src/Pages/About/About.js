@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const About = () => {
     return (
         <div>
-            <div className=" my-20 w-11/12 mx-auto">
-                <img src="https://i.ibb.co/prqPX91/back-fitness-gym-power-pose.jpg " className='w-full' alt="" />
+            <div className=" my-20 mx-auto">
+                <img src="https://i.ibb.co/t2BxpGR/John-Cena-Sitting-Down-Resting.webp" className='w-full' alt="" />
             <div className="">
                 <div className='lg:mt-20 mt-10'>
                     <h1 className="text-5xl font-bold text-center">Hi, I am John Cena...</h1>

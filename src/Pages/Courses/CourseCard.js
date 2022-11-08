@@ -6,13 +6,13 @@ const CourseCard = ({course}) => {
 
     return (
         <div className=''>
-            <div className="hero min-h-screen bg-base-200 rounded-lg mx-auto">
-            <div className="w-11/12 mx-auto">
-                <img src={img} alt="" className=" rounded-lg shadow-2xl" />
+            <div className="hero  bg-base-200 rounded-lg mx-auto">
+            <div className="mx-auto p-5">
+                <img src={img} alt="" className=" rounded-lg shadow-2xl h-[270px]" />
                 <div>
                     <h1 className="text-3xl mt-5 font-bold">{name}</h1>
-                    <p className="py-6">{description}</p>
-                    <p className="py-6">{price}</p>
+                    <p className="py-6 h-[150px]">{description}</p>
+                    <p className="py-6">${price} /week</p>
                     <button className="btn btn-primary">Get Started</button>
                 </div>
             </div>
