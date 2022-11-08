@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
+import ReviewPost from '../ReviewPost/ReviewPost';
 
 const ReviewService = () => {
-    const {name, _id, img, description, price, rating, members} = useLoaderData();
+    const course = useLoaderData();
+    const {name, _id, img, description, price, rating, members} = course;
 
     return (
         <div className="lg:grid md:grid lg:grid-cols-2 md:grid-cols-2 mt-20 mb-40">
@@ -24,8 +26,8 @@ const ReviewService = () => {
                  </div>
             </div>
 
-            <div>
-
+            <div className='mx-auto'>
+                <ReviewPost course={course}></ReviewPost>
             </div>
 
         </div>

@@ -15,13 +15,12 @@ const CourseCard = ({course}) => {
 
                         <PhotoProvider>
                             <PhotoView src={img}>
-                                <img src={img} alt="" className=" rounded-lg shadow-2xl h-[270px]"/>
+                                <img src={img} alt="" className="rounded-lg shadow-2xl h-[270px]"/>
                             </PhotoView>
                         </PhotoProvider>
 
                     <div>
                         <h1 className="text-3xl mt-5 font-bold">{name}</h1>
-
                         {description.length > 100 ?(
                             <p className="py-6 h-[70px]">{description.slice(0, 100)}...{" "}</p>
                             )
@@ -30,7 +29,7 @@ const CourseCard = ({course}) => {
                         }
 
                         <p className="py-6">Price: ${price} /week</p>
-                        <Link to={`/services/${_id}`}> <button className="btn btn-primary">Get Started</button> </Link>                    
+                        <Link to={`/services/${_id}`}> <button className="btn btn-primary">See Details</button> </Link>                    
                     </div>
                 </div>
             </div>

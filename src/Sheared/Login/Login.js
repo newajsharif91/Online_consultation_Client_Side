@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import { Form, Link, useLocation, useNavigate } from "react-router-dom";
-import { ImGoogle } from "react-icons/im";
 import { useContext } from "react";
-
-import { FacebookAuthProvider, GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
-import { FaFacebook, FaGithub } from "react-icons/fa";
+import { GoogleAuthProvider } from "firebase/auth";
 import { AuthContext } from "../../context/AuthProvider";
 
 const Login = () => {
   const{providerLogin, signIn,} = useContext(AuthContext)
+  
 
   const googleProvider = new GoogleAuthProvider();
 
@@ -57,7 +55,7 @@ const Login = () => {
 
   return (
     <div>
-      <Form onSubmit={handleSignIn} className="my-20 lg:w-7/12 md:w-7/12 w-11/12 mx-auto form-bg rounded-lg">
+      <Form onSubmit={handleSignIn} className="mt-20 mb-40 lg:w-7/12 md:w-7/12 w-11/12 mx-auto form-bg rounded-lg">
         <div className="">
           <div className="text-center">
             <h1 className="text-5xl font-bold pt-8 text-blue-600">Login now!</h1>
@@ -112,10 +110,8 @@ const Login = () => {
               </div>
 
 
-              <p className="flex text-center mx-auto">
-                <Link className="iconColor md:mx-10 mx-4 lg:mx-10 text-4xl " onClick={handleGoogleLogIn}><ImGoogle/></Link>
-                <Link className=" md:mx-10 lg:mx-10 text-4xl mx-4 "><FaGithub/></Link>
-                <Link className="iconColor md:mx-10 lg:mx-10 mx-4 text-4xl"><FaFacebook/></Link>
+              <p className="">
+                <Link className="font-bold  btn btn-outline btn-primary " onClick={handleGoogleLogIn}>Signin With Google</Link>
             </p>
 
 

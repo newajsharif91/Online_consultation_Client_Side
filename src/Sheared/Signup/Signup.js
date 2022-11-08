@@ -55,7 +55,7 @@ const Signup = () => {
   
     return (
       <div>
-        <Form onSubmit={handleSignUp} className="mt-20 w-11/12 md:w-9/12 lg:w-9/12 mx-auto">
+        <Form onSubmit={handleSignUp} className="mt-20 mb-40 w-11/12 md:w-9/12 lg:w-9/12 mx-auto">
           <div className="">
             <div className="text-center">
               <h1 className="text-5xl font-bold text-blue-600">Sign Up</h1>
