@@ -3,6 +3,7 @@ import About from "../Pages/About/About";
 import AddService from "../Pages/AddService/AddService";
 import Blog from "../Pages/Blog/Blog";
 import Courses from "../Pages/Courses/Courses";
+import ReviewService from "../Pages/ReviewService/ReviewService";
 import Home from "../Sheared/Home/Home";
 import Login from "../Sheared/Login/Login";
 import Main from "../Sheared/Main/Main";
@@ -40,11 +41,14 @@ export const router = createBrowserRouter([
                 element: <AddService></AddService>
             },
             {
+                path: '/services/:id',
+                element: <ReviewService></ReviewService>,
+                loader: ({params}) => fetch(`https://meet-your-trainer-server-atik2788.vercel.app/services/${params.id}`)
+            },
+            {
                 path: '/courses',
                 element: <Courses></Courses>
-            }
-            
-
+            }   
         ],
     },
     {

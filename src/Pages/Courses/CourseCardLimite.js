@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
+
 
 const CourseCardLimite = () => {
     const [courses, setCourses] = useState([])
@@ -19,12 +22,28 @@ const CourseCardLimite = () => {
                 >
                     <div className="hero  bg-base-200 rounded-lg mx-auto">
                         <div className="mx-auto p-5">
-                            <img src={course.img} alt="" className=" rounded-lg shadow-2xl h-[270px]" />
+
+                            <PhotoProvider>
+                                <PhotoView src={course.img}>
+                                    <img src={course.img} alt="" className=" rounded-lg shadow-2xl h-[270px]"/>
+                                </PhotoView>
+                            </PhotoProvider>
+
                             <div>
                                 <h1 className="text-3xl mt-5 font-bold">{course.name}</h1>
-                                <p className="py-6 h-[150px]">{course.description}</p>
-                                <p className="py-6">${course.price} /week</p>
-                                <button className="btn btn-primary">Get Started</button>
+
+                                <div>
+                                    {course.description.length > 100 ? (
+                                    <p className="py-6 h-[70px]">
+                                        {course.description.slice(0, 100)}...{" "}
+                                    </p>
+                                    ) : (
+                                    <p>{course.description}</p>
+                                    )}
+                                </div>
+
+                                <p className="py-6">Price: ${course.price} /week</p>
+                                <Link to={`/services/${course._id}`}><button className="btn btn-primary">See Details</button></Link>
                             </div>
                         </div>
                     </div>

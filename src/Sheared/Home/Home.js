@@ -5,7 +5,7 @@ import CourseCardLimite from '../../Pages/Courses/CourseCardLimite';
 
 const Home = () => {
     return (
-        <div>
+        <div className='mb-32'>
             <h1 className='text-center text-7xl font-bold text-purple-700 mt-10'>Meet Your Trainer</h1>
             <div className='lg:grid md:grid grid-cols-2 lg:mt-16  w-11/12 mx-auto '>
                 <div className='lg:w-11/12 md:w-full md:text-left text-center lg:text-left mx-auto lg:pt-16 md:pt-16 '>

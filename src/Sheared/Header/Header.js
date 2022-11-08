@@ -6,7 +6,7 @@ import img from '../../assets/logo.png'
 
 const Header = () => {
     const {user, logOut} = useContext(AuthContext)
-    console.log(user)
+    // console.log(user)
 
     const [theme, setTheme] = useState("lightTheme")
 

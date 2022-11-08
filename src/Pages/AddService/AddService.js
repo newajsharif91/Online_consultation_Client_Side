@@ -11,13 +11,18 @@ const AddService = () => {
     const description = form.description.value;
     const price = form.price.value;
     const imgUrl = form.img.value;
+    const members = form.members.value;
+    const rating = form.rating.value;
 
 
     const courses = {
       name: title,
       price: price,
       description: description,
-      img: imgUrl
+      img: imgUrl,
+      rating: rating,
+      members: members,
+
 
     };
 
@@ -72,11 +77,26 @@ const AddService = () => {
             className="input input-bordered w-full"
             required
           />
+          <input
+            name="members"
+            type="text"
+            placeholder="Members"
+            className="input input-bordered w-full"
+            required
+          />
+          <input
+            name="rating"
+            type="text"
+            placeholder="Rating"
+            className="input input-bordered w-full"
+            required
+          />
+         
         </div>
         <input
-          className="btn my-2 rounded-lg text-center"
+          className="btn btn-outline btn-primary my-5 rounded-lg px-10 text-center"
           type="submit"
-          value="Place Your Order"
+          value="Add"
         />
       </form>
     </div>
