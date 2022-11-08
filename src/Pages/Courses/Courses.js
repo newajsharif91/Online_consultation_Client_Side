@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import CourseCard from './CourseCard';
 
 const Courses = () => {
+    const [courses, setCourses] = useState([])
+    console.log(courses)
+
+    useEffect(()=>{
+        fetch('https://meet-your-trainer-server-atik2788.vercel.app/services')
+        .then(res=>res.json())
+        .then(data => setCourses(data))
+    }, [])
+
     return (
-        <div>
-            Courses
+        <div className='lg:grid lg:grid-cols-3 mx-auto gap-5 mt-10'>
+            {   courses.map(course => <CourseCard
+                key={course._id}
+                course={course}
+                ></CourseCard>)
+            }
         </div>
     );
 };

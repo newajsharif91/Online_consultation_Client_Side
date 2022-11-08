@@ -53,7 +53,7 @@ const Header = () => {
                         <li><Link className='text-xl font-bold' to='/courses'>Courses</Link></li>
                         <li><Link className='text-xl font-bold' to='/about'>About</Link></li>
                         <li><Link className='text-xl font-bold' to='/blog'>Blog</Link></li>
-                        <li><Link className='text-xl font-bold' to='/faq'>FAQ</Link></li>
+
                         
                         <li>
                         {   user?.uid?
@@ -70,12 +70,13 @@ const Header = () => {
                                 </>
                                :  
                                <>
+                               <Link className='text-xl font-bold' to='/addservice'>Add service</Link>
+                               <span><Link onClick={handleLogOut}  className='text-xl font-bold' to='/login'>Log Out</Link></span>
                                <span title={user.displayName} >
                                <img className='rounded-full w-10' src={user.photoURL} alt="" />
                                </span>
                                </>
                             }
-                            <span><Link onClick={handleLogOut}  className='text-xl font-bold' to='/login'>Log Out</Link></span>
 
                         </>
                             :
@@ -104,7 +105,7 @@ const Header = () => {
                     <li><Link className='text-xl font-bold' to='/courses'>Courses</Link></li>
                         <li><Link className='text-xl font-bold' to='/about'>About</Link></li>
                         <li><Link className='text-xl font-bold' to='/blog'>Blog</Link></li>
-                        <li><Link className='text-xl font-bold' to='/faq'>FAQ</Link></li>
+                       
                         <li>
                         { user?.uid?
                         <>                        
@@ -120,6 +121,7 @@ const Header = () => {
                                 </>
                                :  
                                <>
+                               <Link className='text-xl font-bold' to='/addservice'>Add service</Link>
                                <span title={user.displayName} >
                                <img className='rounded-full w-10' src={user.photoURL} alt="" />
                                </span>
