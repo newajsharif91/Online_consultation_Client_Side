@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import About from "../Pages/About/About";
 import Blog from "../Pages/Blog/Blog";
+import Courses from "../Pages/Courses/Courses";
 import Home from "../Sheared/Home/Home";
 import Login from "../Sheared/Login/Login";
 import Main from "../Sheared/Main/Main";
@@ -35,7 +36,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/courses',
-                element: <About></About>
+                element: <Courses></Courses>
             }
             
 

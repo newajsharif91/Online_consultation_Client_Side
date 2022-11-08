@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import About from '../../Pages/About/About';
 
 const Home = () => {
     return (
         <div>
-            <div className='lg:grid md:grid grid-cols-2 mt-32 w-11/12 mx-auto '>
+            <h1 className='text-center text-7xl font-bold text-purple-700 mt-10'>Meet Your Trainer</h1>
+            <div className='lg:grid md:grid grid-cols-2 mt-16 w-11/12 mx-auto '>
                 <div className='lg:w-11/12 md:w-2/4 md:text-left text-center lg:text-left mx-auto lg:pt-16 md:pt-16 '>
                     <h1 className='text-5xl font-semibold'>Keep Your Body Fit, With
                     <p className='text-blue-700 font-bold my-2'>John Cena</p> from anywhere.
@@ -18,6 +20,7 @@ const Home = () => {
                     <img src={'https://i.ibb.co/Lv5YVQc/john-cena-workout-and-diet-plan-1200x800-removebg-preview.png'} alt="" />
                 </div>
             </div>
+            <About></About>
 
 
         </div>

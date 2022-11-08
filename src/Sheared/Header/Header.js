@@ -15,6 +15,7 @@ const Header = () => {
 
     }, [theme])
 
+
     const handleToogle = () =>{
         if(theme === "darkTheme"){
             setTheme("lightTheme")
@@ -35,15 +36,13 @@ const Header = () => {
 
     return (
         <div>
-             <div className='mt-0  w-full'>
-           <div className="navbar bg-base-500 ">
+           <div className='mt-0  w-full'>
+            <div className="navbar bg-base-500 ">
             
-                <div className=" navbar">
+                <div className=" ">
 
-                <Link to='/' className="btn btn-ghost normal-case text-5xl font-bold">
-                    <img className='h-16 mr-2 rounded-full pb-1' src={img}  alt="" /></Link>
-                <Link to='/'><p className="btn btn-ghost normal-case md:text-5xl text-3xl lg:text-5xl font-bold">
-                    Meet Your Trainer</p></Link>
+                    <Link to='/' className="btn btn-ghost normal-case text-5xl font-bold">
+                    <img className='h-16 mr-2 pb-1' src={img}  alt="" /></Link>
 
                     <div className="dropdown dropdown-end sm:ml-34">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -96,8 +95,6 @@ const Header = () => {
 
 
                 </div>
-
-
 
 
                 
