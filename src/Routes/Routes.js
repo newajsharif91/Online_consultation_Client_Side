@@ -12,6 +12,7 @@ import Main from "../Sheared/Main/Main";
 import NotFound from "../Sheared/NotFound/NotFound";
 import Signup from "../Sheared/Signup/Signup";
 import ReviewSingle from "../Pages/ReviewSingle/ReviewSingle";
+import MyReview from "../Pages/MyReview/MyReview";
 
 export const router = createBrowserRouter([
   {
@@ -40,7 +41,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/addservice",
-        element: <AddService></AddService>,
+        element: <PrivateRouter><AddService></AddService></PrivateRouter>,
       },
       {
         path: "/services/:id",
@@ -53,6 +54,10 @@ export const router = createBrowserRouter([
       {
         path: "/courses",
         element: <Courses></Courses>,
+      },
+      {
+        path: "/myreviews",
+        element: <PrivateRouter><MyReview></MyReview></PrivateRouter>,
       },
       {
         path: "/reviews",

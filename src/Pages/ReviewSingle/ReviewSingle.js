@@ -5,11 +5,11 @@ import ReviewSingleDetails from './ReviewSingleDetails/ReviewSingleDetails';
 const ReviewSingle = () => {
     const service = useLoaderData()
     const [reviews, setReview] = useState([])
-    console.log(reviews)
+    // console.log(reviews)
 
 
     useEffect(()=>{
-        fetch(`https://meet-your-trainer-server-atik2788.vercel.app/reviews?serviceId=${service._id}`
+        fetch(`https://meet-your-trainer-server-atik2788.vercel.app/reviews2?serviceId=${service._id}`
         )
         .then(res => res.json())
         .then(data => setReview(data))

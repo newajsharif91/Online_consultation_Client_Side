@@ -53,6 +53,7 @@ const Header = () => {
                                :  
                                <>
                                <Link className='text-xl font-bold' to='/addservice'>Add service</Link>
+                               <Link className='text-xl font-bold' to='/myreviews'>My Reviews</Link>
                                <span><Link onClick={handleLogOut}  className='text-xl font-bold' >Log Out</Link></span>
                                <span title={user.displayName} >
                                <img className='rounded-full w-10' src={user.photoURL} alt="" />
@@ -104,6 +105,7 @@ const Header = () => {
                                :  
                                <>
                                <Link className='text-xl font-bold' to='/addservice'>Add service</Link>
+                               <Link className='text-xl font-bold' to='/myreviews'>My Reviews</Link>
                                <span title={user.displayName} >
                                <img className='rounded-full w-10' src={user.photoURL} alt="" />
                                </span>
