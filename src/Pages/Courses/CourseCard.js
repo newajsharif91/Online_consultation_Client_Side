@@ -30,7 +30,7 @@ const CourseCard = ({course}) => {
 
                         <p className="py-6">Price: ${price} /week</p>
                         <Link to={`/services/${_id}`}> <button className="btn btn-primary">See Details</button> </Link>                    
-                    </div>
+                    </div>  
                 </div>
             </div>
         </div>

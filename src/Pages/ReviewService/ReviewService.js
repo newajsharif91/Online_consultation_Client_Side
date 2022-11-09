@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
 import ReviewPost from '../ReviewPost/ReviewPost';
+import ReviewSingle from '../ReviewSingle/ReviewSingle';
+import { AuthContext } from '../../context/AuthProvider';
 
 const ReviewService = () => {
+    const {user} = useContext(AuthContext)
     const course = useLoaderData();
     const {name, _id, img, description, price, rating, members} = course;
+    console.log(rating)
+
 
     return (
         <div className="lg:grid md:grid lg:grid-cols-2 md:grid-cols-2 mt-20 mb-40">
@@ -26,8 +31,25 @@ const ReviewService = () => {
                  </div>
             </div>
 
-            <div className='mx-auto'>
-                <ReviewPost course={course}></ReviewPost>
+            <div className='w-10/12 mx-auto'>
+
+                <div className='mx-auto'>
+                    { user?.uid?
+                    <>  
+                        <ReviewPost course={course}></ReviewPost>
+                    </>
+                    :
+                        <span>
+                            <p className='text-4xl font-bold text-center'>Please Log in to add Review</p>
+                            <Link to='/login'><button className="btn btn-outline btn-primary py-0 px-10 mt-10">Login</button></Link>
+                        </span>
+
+                    }
+                </div>
+
+                <div>
+                    <ReviewSingle></ReviewSingle>
+                </div>
             </div>
 
         </div>

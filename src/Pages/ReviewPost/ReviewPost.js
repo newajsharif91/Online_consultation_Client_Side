@@ -17,8 +17,9 @@ const ReviewPost = ({course}) => {
         const comment = form.comment.value;
         
         const review = {
-          id: id,
+          serviceId: id,
           name,
+          photoURL: user.photoURL,
           UserName: UserName,
           email: email,
           rating: rating,
@@ -27,7 +28,6 @@ const ReviewPost = ({course}) => {
     
     
         fetch("https://meet-your-trainer-server.vercel.app/reviews", {
-        // fetch("http://localhost:5002/reviews", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -48,7 +48,7 @@ const ReviewPost = ({course}) => {
       return (
         <div>
             <h2 className="text-4xl text-center font-bold my-10 text-blue-700">Add Review</h2>
-          <form onSubmit={handlePlaceReview} className='mb-48'>
+          <form onSubmit={handlePlaceReview} className='mb-20'>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
               <input name="name" defaultValue={user.displayName} readOnly type="text" placeholder="Your Full Name" className="input input-bordered w-full"/>
               <input name="email" defaultValue={user.email} readOnly type="email" placeholder="Email" className="input input-bordered w-full" required/>
