@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
-import ReviewPost from '../ReviewPost/ReviewPost';
 import ReviewSingle from '../ReviewSingle/ReviewSingle';
 import { AuthContext } from '../../context/AuthProvider';
 
@@ -9,7 +8,62 @@ const ReviewService = () => {
     const {user} = useContext(AuthContext)
     const course = useLoaderData();
     const {name, _id, img, description, price, rating, members} = course;
-    console.log(rating)
+    console.log(course)
+
+
+    const [reviews, setReviews] = useState([])
+
+    
+    useEffect(()=>{
+        fetch(`https://meet-your-trainer-server-atik2788.vercel.app/reviews2?serviceId=${course._id}`
+        )
+        .then(res => res.json())
+        .then(data => setReviews(data))
+    }, [course._id])
+
+
+
+
+    // review post***************
+    const handlePlaceReview = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const UserName = form.name.value;
+        const email = form.email.value;
+        const rating = form.rating.value;        
+        const id = form.id.value;
+        const comment = form.comment.value;
+        
+        const review = {
+          serviceId: id,
+          name,
+          photoURL: user.photoURL,
+          UserName: UserName,
+          email: email,
+          rating: rating,
+          comment: comment      
+        };
+
+
+
+        fetch("https://meet-your-trainer-server.vercel.app/reviews", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(review),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+              if (data.acknowledged) {
+                alert("Review Placed Successfully!");
+                form.reset();
+              }
+            })
+            .catch((err) => console.error(err));
+        };
+
 
 
     return (
@@ -34,9 +88,22 @@ const ReviewService = () => {
             <div className='w-10/12 mx-auto'>
 
                 <div className='mx-auto'>
-                    { user?.uid?
+                    { user && user.uid?
                     <>  
-                        <ReviewPost course={course}></ReviewPost>
+                        <div>
+                            <h2 className="text-4xl text-center font-bold my-10 text-blue-700">Add Review</h2>
+                            <form onSubmit={handlePlaceReview} className='mb-20'>
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
+                                <input name="name" defaultValue={user.displayName} readOnly type="text" placeholder="Your Full Name" className="input input-bordered w-full"/>
+                                <input name="email" defaultValue={user.email} readOnly type="email" placeholder="Email" className="input input-bordered w-full" required/>
+                                <input name="rating" type="text" placeholder="Rating" className="input input-bordered w-full" required/>         
+                                <input name="id" type="text" defaultValue={_id} readOnly placeholder="Id" className="input hidden input-bordered w-full" required/>         
+                                </div>
+                                <textarea name="comment" type="text" placeholder="Comment" className="input input-bordered w-full mt-5 h-28" required/>
+                                
+                                <input className="btn btn-outline btn-primary my-5 rounded-lg px-10 text-center" type="submit" value="Submit"/>
+                            </form>
+                        </div>
                     </>
                     :
                         <span>
@@ -48,7 +115,7 @@ const ReviewService = () => {
                 </div>
 
                 <div>
-                    <ReviewSingle></ReviewSingle>
+                    <ReviewSingle reviews={reviews}></ReviewSingle>
                 </div>
             </div>
 

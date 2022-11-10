@@ -4,7 +4,6 @@ import AddService from "../Pages/AddService/AddService";
 import Blog from "../Pages/Blog/Blog";
 import Courses from "../Pages/Courses/Courses";
 import ReviewService from "../Pages/ReviewService/ReviewService";
-import ReviewPost from "../Pages/ReviewPost/ReviewPost";
 import PrivateRouter from "../PrivetRouter/PrivateRouter";
 import Home from "../Sheared/Home/Home";
 import Login from "../Sheared/Login/Login";
@@ -62,11 +61,8 @@ export const router = createBrowserRouter([
       {
         path: "/reviews",
         element: <ReviewSingle></ReviewSingle>,
-      },
-      {
-        path: "/reviewpost",
-        element: <ReviewPost></ReviewPost>
-      },
+      }
+
     ],
   },
   {

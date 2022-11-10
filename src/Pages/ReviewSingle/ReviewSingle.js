@@ -1,19 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React from 'react';
 import ReviewSingleDetails from './ReviewSingleDetails/ReviewSingleDetails';
 
-const ReviewSingle = () => {
-    const service = useLoaderData()
-    const [reviews, setReview] = useState([])
-    // console.log(reviews)
+const ReviewSingle = ({reviews}) => {
 
-
-    useEffect(()=>{
-        fetch(`https://meet-your-trainer-server-atik2788.vercel.app/reviews2?serviceId=${service._id}`
-        )
-        .then(res => res.json())
-        .then(data => setReview(data))
-    }, [service._id])
 
      return (
         <div>
@@ -21,12 +10,21 @@ const ReviewSingle = () => {
            
            <div className='mt-12'>
             {
-                reviews.map(review => 
-                <ReviewSingleDetails
-                key={review._id}
-                review={review}
-                ></ReviewSingleDetails>)
+                reviews.length === 0 ?
+                  <div>
+                    <h3>not found</h3>
+                  </div>
+                :
+                <>
+                    {reviews.map(review => 
+                    <ReviewSingleDetails
+                    key={review._id}
+                    review={review}
+                    ></ReviewSingleDetails>)
+                        }
+                </>
             }
+
            </div>
 
         </div>
