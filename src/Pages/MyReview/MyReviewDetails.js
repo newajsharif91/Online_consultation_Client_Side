@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 
 const MyReviewDetails = ({myReview, handleDeleteReview, handleUpdateUser}) => {
     const {name, comment, _id, rating} = myReview;
-    console.log(_id)
+    // console.log(_id)
+
+    
 
     return (
         <div className='my-20 w-11/12 lg:w-2/4 mx-auto'>

@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const About = () => {
+    useTitle('About')
+
     return (
         <div>
             <div className=" my-20 mx-auto">

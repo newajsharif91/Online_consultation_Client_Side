@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 import About from '../../Pages/About/About';
 import CourseCardLimite from '../../Pages/Courses/CourseCardLimite';
 
 const Home = () => {
+    useTitle('Home')
+
     return (
         <div className='mb-32'>
             <h1 className='text-center text-7xl font-bold text-purple-700 mt-10'>Meet Your Trainer</h1>

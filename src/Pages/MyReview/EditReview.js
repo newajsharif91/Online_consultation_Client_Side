@@ -8,7 +8,17 @@ const EditReview = () => {
     console.log(user)
 
     const review = useLoaderData();
-    // console.log(review)
+    console.log(review)
+
+
+
+
+
+
+
+
+
+
 
     return (
         <div>
@@ -16,7 +26,7 @@ const EditReview = () => {
 
             <div>
                             <h2 className="text-4xl text-center font-bold my-10 text-blue-700">Edit Review</h2>
-                            <form className='mb-20'>
+                            <form  className='mb-20'>
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
                                 <input name="name" defaultValue={''} readOnly type="text" placeholder="Your Full Name" className="input input-bordered w-full"/>
                                 <input name="email" defaultValue={' '} readOnly type="email" placeholder="Email" className="input input-bordered w-full" required/>

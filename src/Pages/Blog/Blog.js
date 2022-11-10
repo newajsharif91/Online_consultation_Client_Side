@@ -1,6 +1,10 @@
 import React from "react";
+import useTitle from "../../hooks/useTitle";
 
 const Blog = () => {
+
+  useTitle('Blog')
+
   return (
     <div className="w-10/12 mx-auto mt-20 mb-20">
 
@@ -27,64 +31,64 @@ const Blog = () => {
     <div className="mt-20">
       <div tabIndex={0} className="collapse group mt-3">
         <div className="collapse-title bg-green-700 rounded-lg text-primary-content group-focus:bg-purple-700 group-focus:text-secondary-content">
-          01. What is cors?
+          01. Difference between sql and nosql..
         </div>
         <div className="collapse-content bg-green-700 rounded-lg text-primary-content group-focus:bg-purple-700 group-focus:text-secondary-content">
           <p>
-            ORS is a node.js package for providing a Connect/Express middleware
-            that can be used to enable CORS with various options. <br /> <br />
-            Node.js is an open-source and cross-platform runtime used when
-            executing JavaScript code on the server-side. One of the popular
-            Node.js server frameworks is Express. Implementing CORS in Node.js
-            helps you access numerous functionalities on the browser. Express
-            allows you to configure and manage an HTTP server to access
-            resources from the same domain.
+          SQL has been around for over 40 years, so it is recognizable, documented, and widely-used. Safe and versatile, it’s particularly well suited for complex queries. However, SQL restricts the user to working within a predefined tabular schema, and more care must be taken to organize and understand the data before it is used.HTTP server to access
+            resources from the same domain. <br />
+            Most SQL databases can be scaled vertically, by increasing the processing power of existing hardware. NoSQL databases use a master-slave architecture which scales better horizontally, with additional servers or nodes. These are useful generalizations, but it’s important to note:
+
+            SQL databases can be scaled horizontally as well, though sharding or partitioning logic is often the user’s onus and not well supported.
+            NoSQL technologies are diverse and while many rely on the master-slave architecture, options for scaling vertically also exist.
+            Savings made using more efficient data structures can overwhelm differences in scalability; most important is to understand the use case and plan accordingly.
           </p>
         </div>
       </div>
 
       <div tabIndex={0} className="collapse group mt-3">
         <div className="collapse-title bg-green-700   rounded-lg text-primary-content group-focus:bg-purple-700 group-focus:text-secondary-content">
-          02. Why are you using firebase? <br />What other options do you have to implement authentication?
+          02. What is JWT, and how does it work?
         </div>
         <div className="collapse-content bg-green-700 rounded-lg text-primary-content group-focus:bg-purple-700 group-focus:text-secondary-content">
-          <p>
-            Give users a quick, intuitive sign-in process with Firebase
-            Authentication. <br />
+          <p className="font-bold">
+          What Are Tokens? <br /> <br />
+          Now that you understand JSON as a data text format, you may be wondering What are tokens? To put it simply, a token is a string of data that represents something else, such as an identity. In the case of authentication, a non-JWT based token is a string of characters that allow the receiver to validate the sender’s identity. The important distinction here is lack of meaning within the characters themselves. <br /><br />
+          </p>
 
-            Allow users to sign in to your app with their Facebook, Twitter,
-            Google, or GitHub account with less than 5 minutes of work. <br />
-            <br />
-            Track each step of your onboarding flow to improve the experience. <br /> 
-            Use Google Analytics for Firebase to log events at every step of
-            your onboarding flow, create funnels to see where users are dropping
-            off, and use Remote Config to make changes to your app to see how it
-            affects conversions. <br /><br />
-            1. Password-based authentication· <br /> 2. Multi-factor authentication· <br /> 3. Certificate-based authentication· <br /> 4. Biometric authentication· br 5. Token-based authentication.
+          <p className="font-bold">
+              How JWT Works? <br /> <br />
+              JWTs differ from other web tokens in that they contain a set of claims. Claims are used to transmit information between two parties. What these claims are depends on the use case at hand. For example, a claim may assert who issued the token, how long it is valid for, or what permissions the client has been granted.
+             A JWT is a string made up of three parts, separated by dots (.), and serialized using base64. In the most common serialization format, compact serialization, the JWT looks something like this: xxxxx.yyyyy.zzzzz. 
           </p>
         </div>
       </div>
 
       <div tabIndex={0} className="collapse group mt-3">
         <div className="collapse-title bg-green-700 rounded-lg text-primary-content group-focus:bg-purple-700 group-focus:text-secondary-content">
-          0.3 How does the private route work?
+          0.3 What is the difference between javascript and NodeJS ?
         </div>
         <div className="collapse-content bg-green-700 rounded-lg text-primary-content group-focus:bg-purple-700 group-focus:text-secondary-content">
           <p>
-            Private Route <br />
-            PrivateRoute component is the blueprint for all private routes in the application. If the user is logged in, go on and display the component in question; otherwise, redirect the user to sign-in page. Additionally, we can define the logic of isLogin utility function separately in utils folder.
+          1. NodeJS : <br />
+          NodeJS is a cross-platform and opensource Javascript runtime environment that allows the javascript to be run on the server-side. Nodejs allows Javascript code to run outside the browser. Nodejs comes with a lot of modules and mostly used in web development. <br /><br />
+
+          2. JavaScript : <br />
+          Javascript is a Scripting language. It is mostly abbreviated as JS. It can be said that Javascript is the updated version of the ECMA script. Javascript is a high-level programming language that uses the concept of Oops but it is based on prototype inheritance. 
           </p>
         </div>        
       </div>
 
+
       <div tabIndex={0} className="collapse group mt-3">
         <div className="collapse-title bg-green-700 rounded-lg text-primary-content group-focus:bg-purple-700 group-focus:text-secondary-content">
-          0.4 What is Node? <br /> How does Node work?
+        How does NodeJS handle multiple requests at the same time?
         </div>
         <div className="collapse-content bg-green-700 rounded-lg text-primary-content group-focus:bg-purple-700 group-focus:text-secondary-content">
           <p>Node.js is a lean, fast, cross-platform JavaScript runtime environment that is useful for both servers and desktop applications. <br />
-          Node.js is an open-source backend javascript runtime environment. It is a used as backend service where javascript works on the server-side of the application. This way javascript is used on both frontend and backend. Node.js runs on chrome v8 engine which converts javascript code into machine code, it is highly scalable, lightweight, fast, and data-intensive. <br /> <br />
-          Node.js accepts the request from the clients and sends the response, while working with the request node.js handles them with a single thread. To operate I/O operations or requests node.js use the concept of threads. Thread is a sequence of instructions that the server needs to perform. It runs parallel on the server to provide the information to multiple clients. Node.js is an event loop single-threaded language. It can handle concurrent requests with a single thread without blocking it for one request.
+          When I was new in the Node.js world, I was wondering know how many requests can actually handle my Node.js application in production (as a real-world app). Or how many server instances do I need to handle a specific amount of traffic.
+
+          Last year I read something very interesting for me in an article from a unicorn company PicsArt. They handle 40K requests per second having Node.js (mostly) for the backend.
 
           </p>
         </div>        

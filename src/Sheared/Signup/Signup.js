@@ -3,9 +3,12 @@ import { useState } from "react";
 import { useContext } from "react";
 import { Form, Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const Signup = () => {
     const navigate = useNavigate();
+
+    useTitle('Sign Up')
 
     const {signUp, user, setUser, profileUpdate} = useContext(AuthContext)
   

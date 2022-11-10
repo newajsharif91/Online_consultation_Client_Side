@@ -1,7 +1,9 @@
 import React from "react";
+import useTitle from "../../hooks/useTitle";
 
 const AddService = () => {
 
+    useTitle('AddServices')
 
   const handlePlaceOrder = (event) => {
     event.preventDefault();
@@ -45,7 +47,7 @@ const AddService = () => {
   };
 
   return (
-    <div>
+    <div className="min-h-screen">
         <h2 className="text-4xl text-center font-bold my-10 text-blue-700">Add New Service</h2>
       <form onSubmit={handlePlaceOrder} className='mb-48'>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
