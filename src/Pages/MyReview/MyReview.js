@@ -12,7 +12,7 @@ const MyReview = () => {
     // console.log(myReviews)
 
     useEffect(()=>{
-        fetch(`http://localhost:5002/reviews?email=${user.email}`,{
+        fetch(`https://meet-your-trainer-server-atik2788.vercel.app/reviews?email=${user.email}`,{
             headers:{
                 authorization: `Bearer ${localStorage.getItem('trainer-token')}`
             }

@@ -53,7 +53,7 @@ const Login = () => {
       console.log(currentUser)
       
       // get jwt token 
-      fetch('http://localhost:5002/jwt', {
+      fetch('https://meet-your-trainer-server-atik2788.vercel.app/jwt', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'
