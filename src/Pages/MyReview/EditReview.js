@@ -5,10 +5,10 @@ import { AuthContext } from '../../context/AuthProvider';
 const EditReview = () => {
 
     const {user} = useContext(AuthContext)
-    // console.log(user)
+    console.log(user)
 
     const reviews = useLoaderData()
-    console.log(reviews._id)
+    console.log(reviews)
 
     const [review, setReview] = useState();
     console.log(review)
@@ -18,7 +18,7 @@ const EditReview = () => {
     const handleUpdateUser = event =>{
         event.preventDefault()
 
-        fetch(`https://meet-your-trainer-server-atik2788.vercel.app/reviews${user._id}`)
+        fetch(`https://meet-your-trainer-server-atik2788.vercel.app/reviews/${user._id}`)
 
     }
 
@@ -39,8 +39,8 @@ const EditReview = () => {
                             <h2 className="text-4xl text-center font-bold my-10 text-blue-700">Edit Review</h2>
                             <form  className='mb-20'>
                                 <div onSubmit={handleUpdateUser} className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
-                                <input name="name" defaultValue={user.displayName} readOnly type="text" placeholder="Your Full Name" className="input input-bordered w-full"/>
-                                <input name="email" defaultValue={user.email} readOnly type="email" placeholder="Email" className="input input-bordered w-full" required/>
+                                {/* <input name="name" defaultValue={user.displayName} readOnly type="text" placeholder="Your Full Name" className="input input-bordered w-full"/> */}
+                                {/* <input name="email" defaultValue={user.email} readOnly type="email" placeholder="Email" className="input input-bordered w-full" required/> */}
                                 <input name="rating" onBlur={handleInputChange} type="text" placeholder="Rating" className="input input-bordered w-full" required/>         
                                 <input name="id" type="text" defaultValue={''} readOnly placeholder="Id" className="input hidden input-bordered w-full" required/>         
                                 </div>

@@ -66,7 +66,7 @@ export const router = createBrowserRouter([
       {
         path: "/reviews/:id",
         element: <EditReview></EditReview>,
-        loader: ({params}) => fetch(`https://meet-your-trainer-server-atik2788.vercel.app/reviews/${params.id}`),
+        loader: ({params}) => fetch(`https://meet-your-trainer-server-atik2788.vercel.app/service/${params.id}`),
       }
 
     ],
