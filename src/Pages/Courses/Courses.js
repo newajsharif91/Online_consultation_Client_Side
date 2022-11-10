@@ -3,16 +3,28 @@ import { AuthContext } from "../../context/AuthProvider";
 import CourseCard from "./CourseCard";
 
 const Courses = () => {
-
+  const [loading, setLoading] = useState(true);
   const [courses, setCourses] = useState([]);
   // console.log(courses)
 
   useEffect(() => {
     fetch("https://meet-your-trainer-server-atik2788.vercel.app/services")
       .then((res) => res.json())
-      .then((data) => setCourses(data));
+      .then((data) => {
+        setCourses(data)
+        setLoading(false);
+
+
+      });
 
   }, []);
+
+
+  // useTitle("Services");
+  if (loading) {
+    return <progress className="progress w-full"></progress>;
+  }
+
 
   return (
     <div className="lg:grid lg:grid-cols-3 mx-auto gap-5 mt-10 mb-20">
