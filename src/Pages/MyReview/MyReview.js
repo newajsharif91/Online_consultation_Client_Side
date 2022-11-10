@@ -7,14 +7,25 @@ const MyReview = () => {
 
     useTitle('MyReview')
 
-    const {user} = useContext(AuthContext)
+    const {user, logOut} = useContext(AuthContext)
     const [myReviews, SetMyReviews] = useState([])
     // console.log(myReviews)
 
     useEffect(()=>{
-        fetch(`https://meet-your-trainer-server-atik2788.vercel.app/reviews?email=${user.email}`)
-        .then(res => res.json())
-        .then(data => SetMyReviews(data))
+        fetch(`http://localhost:5002/reviews?email=${user.email}`,{
+            headers:{
+                authorization: `Bearer ${localStorage.getItem('trainer-token')}`
+            }
+        })
+        .then(res => {
+            if(res.status === 401 || res.status === 403){
+                logOut();
+            }
+            res.json()
+        })
+        .then(data => {
+            SetMyReviews(data)
+        })
     }, [user.email])
 
 
