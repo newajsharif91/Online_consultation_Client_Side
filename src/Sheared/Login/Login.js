@@ -60,14 +60,14 @@ const Login = () => {
         },
         body: JSON.stringify(currentUser)
       })
-      .then(res=>res.json())
+      .then(res => res.json())
       .then(data => {
         console.log(data);
         localStorage.setItem('trainer-token', data.token);
         navigate(from, {replace: true})
+        // form.reset();      
       })
 
-      // form.reset();      
     })
 
     .catch(error=> {
