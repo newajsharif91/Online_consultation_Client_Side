@@ -65,7 +65,7 @@ const Login = () => {
         console.log(data);
         localStorage.setItem('trainer-token', data.token);
         navigate(from, {replace: true})
-        // form.reset();      
+        form.reset();      
       })
 
     })

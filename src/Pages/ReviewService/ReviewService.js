@@ -13,12 +13,15 @@ const ReviewService = () => {
 
     const [reviews, setReviews] = useState([])
 
+    const [loading, setLoading] = useState(true)
+
     
     useEffect(()=>{
         fetch(`https://meet-your-trainer-server-atik2788.vercel.app/reviews2?serviceId=${course._id}`
         )
         .then(res => res.json())
         .then(data => setReviews(data))
+        setLoading(false);
     }, [course._id])
 
 
@@ -35,6 +38,7 @@ const ReviewService = () => {
         const comment = form.comment.value;
         
         const review = {
+            createdAt: new Date().toISOString(),
           serviceId: id,
           name,
           photoURL: user.photoURL,
@@ -58,12 +62,19 @@ const ReviewService = () => {
                 console.log(data);
               if (data.acknowledged) {
                 alert("Review Placed Successfully!");
+                const newReview = [...review, review]
+                setReviews(newReview)
+                setLoading(false);
                 form.reset();
               }
             })
             .catch((err) => console.error(err));
         };
 
+
+        if (loading) {
+            return <progress className="progress w-full"></progress>;
+          }
 
 
     return (

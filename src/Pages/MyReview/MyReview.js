@@ -7,6 +7,8 @@ const MyReview = () => {
 
     useTitle('MyReview')
 
+    const [loading, setLoading] = useState(true)
+
     const {user, logOut} = useContext(AuthContext)
     const [myReviews, SetMyReviews] = useState([])
     // console.log(myReviews)
@@ -19,14 +21,15 @@ const MyReview = () => {
         })
         .then(res => {
             if(res.status === 401 || res.status === 403){
-                logOut();
+                logOut()                
             }
-            res.json()
+           return res.json()
         })
         .then(data => {
             SetMyReviews(data)
+            setLoading(false);
         })
-    }, [user.email])
+    }, [logOut, user.email])
 
 
         // delete review
@@ -43,6 +46,7 @@ const MyReview = () => {
                         alert("User Deleted Successfully!")
                         const remaining = myReviews.filter(rev => rev._id !== id)
                         SetMyReviews(remaining)
+                        setLoading(false);
                     }
                 })
             }
@@ -56,6 +60,10 @@ const MyReview = () => {
         }
 
 
+
+        if (loading) {
+            return <progress className="progress w-full"></progress>;
+          }
 
 
     return (
