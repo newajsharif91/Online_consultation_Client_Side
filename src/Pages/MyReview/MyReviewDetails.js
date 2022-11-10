@@ -1,12 +1,10 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
-const MyReviewDetails = ({myReview, handleDeleteReview}) => {
+const MyReviewDetails = ({myReview, handleDeleteReview, handleUpdateUser}) => {
     const {name, comment, _id, rating} = myReview;
     console.log(_id)
-
-
-
 
     return (
         <div className='my-20 w-11/12 lg:w-2/4 mx-auto'>
@@ -19,7 +17,8 @@ const MyReviewDetails = ({myReview, handleDeleteReview}) => {
                     <p className='mt-3'><span className='font-bold'>Comment:</span> {comment}</p>
                 </div>
                 <div className='mb-7'>
-                <button class="btn btn-outline btn-primary px-10 mb-2 ml-7">Edit</button>
+                <Link to={`/reviews/${_id}`}><button class="btn btn-outline btn-primary px-10 mb-2 ml-7">Edit</button></Link>
+
                 <button onClick={()=> handleDeleteReview(_id)} class="btn btn-outline btn-error px-10 mb-2 ml-7">Delete</button>
                 </div>
             </div>

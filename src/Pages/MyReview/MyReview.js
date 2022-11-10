@@ -34,6 +34,12 @@ const MyReview = () => {
         }
     
 
+        // update User
+        const handleUpdateUser = event =>{
+            event.preventDefault();
+
+        }
+
 
 
 
@@ -53,6 +59,7 @@ const MyReview = () => {
                     key={myReview._id}
                     myReview={myReview}
                     handleDeleteReview={handleDeleteReview}
+                    handleUpdateUser={handleUpdateUser}
                     ></MyReviewDetails>
                     )}
                 </>

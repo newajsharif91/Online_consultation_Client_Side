@@ -3,7 +3,7 @@ import { AuthContext } from "../../context/AuthProvider";
 import CourseCard from "./CourseCard";
 
 const Courses = () => {
-  const {loading } = useContext(AuthContext);
+
   const [courses, setCourses] = useState([]);
   // console.log(courses)
 
@@ -11,8 +11,8 @@ const Courses = () => {
     fetch("https://meet-your-trainer-server-atik2788.vercel.app/services")
       .then((res) => res.json())
       .then((data) => setCourses(data));
-    loading(true)
-  }, [loading]);
+
+  }, []);
 
   return (
     <div className="lg:grid lg:grid-cols-3 mx-auto gap-5 mt-10 mb-20">

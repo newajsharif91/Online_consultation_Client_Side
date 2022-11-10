@@ -12,6 +12,7 @@ import NotFound from "../Sheared/NotFound/NotFound";
 import Signup from "../Sheared/Signup/Signup";
 import ReviewSingle from "../Pages/ReviewSingle/ReviewSingle";
 import MyReview from "../Pages/MyReview/MyReview";
+import EditReview from "../Pages/MyReview/EditReview";
 
 export const router = createBrowserRouter([
   {
@@ -61,6 +62,11 @@ export const router = createBrowserRouter([
       {
         path: "/reviews",
         element: <ReviewSingle></ReviewSingle>,
+      },
+      {
+        path: "/reviews/:id",
+        element: <EditReview></EditReview>,
+        loader: ({params}) => fetch(`https://meet-your-trainer-server-atik2788.vercel.app/reviews/${params.id}`),
       }
 
     ],
